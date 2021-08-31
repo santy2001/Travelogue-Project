@@ -1,0 +1,21 @@
+<h1 class="loginclass">Login</h1>
+<div class="container col-lg-6">
+    <form method="POST" action="/login" class="column">
+        <div class="form-group">
+            <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault" type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault" type="password" name="password" placeholder="Password" required>
+        </div>
+        <%if(messages.error){%>
+            <div style="color:#D0021B;font-family:'IBM Plex Sans', sans-serif;font-weight:700;font-size:3;">
+                <%=messages.error%>
+            </div>
+            <%}%>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-block btn-primary" id="login" style="width:200px;float:left;font-family: 'IBM Plex Sans', sans-serif; line-height: 0px;">LOG IN</button>
+                </div>
+
+
+    </form>
+</div>

@@ -1,0 +1,133 @@
+<%- include("../partials/header")%>
+    <div class="row" style="background-color: #EEEEEE;">
+        <div class="container col-lg-6">
+            <div style="width:100;">
+                <div class="column" style="width: 50px;">
+                    <a href="/places "><img src="https://personal-travelog.herokuapp.com/images/arrow.svg" width="20px" height="21px" style="margin-top: 4px;"></a>
+
+                </div>
+                <div class="column ">
+                    <strong><h4>Add Place</h4></strong>
+                </div>
+                <img src="https://personal-travelog.herokuapp.com/images/travel-illustration.svg" style="margin-top: -30%;" height="100%">
+
+            </div>
+
+
+
+        </div>
+        <div class="container col-lg-6">
+            <div style="margin:20px 90px 20px 90px;background-color: #ffffff; transform: scale(.9);" class=" ">
+                <form action="/places" method="POST" style="padding:50px" class="headings">
+
+                    <p class="addplaceheadfont">Add Details about the place where you have visited.</p>
+                    <div class="form-group">
+                        <p>City</p>
+                        <input id="city" class="form-control inputstyle" type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <p>Photo URL</p>
+                        <input id="photourl" class="form-control inputstyle" type="text" name="image" required>
+                    </div>
+
+                    <div class="form-group">
+                        <p>Few words about this place</p>
+
+                        <textarea id="description" class="inputstyle" name="description" rows="5" cols="45"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="visited" value="Visited" name="visited" onclick="fun()">
+                        <label for="visited">VISITED</label>
+                        <input type="checkbox" id="bucket" value="Bucket" name="bucket">
+                        <label for="bucket">BUCKET-LIST</label>
+                    </div>
+                    <div class="form-group" id="visitdate" style="display: none;">
+                        <p>When did you travel here?</p>
+                        <input class="form-control inputstyle" type="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-block btn-primary" style="width:190px;float:right;line-height: 7px;" onclick="myFunction()">ADD PLACE</button>
+
+                    </div>
+                    <strong><p style="color:red;font-family: 'IBM Plex Sans', sans-serif;" id="err"></p></strong>
+                    <br/>
+                    <br/>
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- <div style="display: flex; ">
+        <div class="container container1 " style="flex-grow: 1 ">
+            <a href="/places "><img src="https://personal-travelog.herokuapp.com/images/arrow.svg " width="20px " height="21px "></a>
+            <strong><h1>Add Place</h1></strong>
+        </div>
+        <div class="container container2 ">
+
+            <form action="/places " method="POST ">
+                <img src="https://personal-travelog.herokuapp.com/images/travel-illustration.svg ">
+                <p>Add Details about the place where you have visited.</p>
+                <div class="form-group ">
+                    <p>City</p>
+                    <input id="city " class="form-control inputstyle " type="text " name="name " required>
+                </div>
+                <div class="form-group ">
+                    <p>Photo URL</p>
+                    <input id="photourl " class="form-control inputstyle " type="text " name="image " required>
+                </div>
+
+                <div class="form-group ">
+                    <p>Few words about this place</p>
+
+                    <textarea id="description " class="inputstyle " name="description " rows="5 " cols="55 "></textarea>
+                </div>
+                <div class="form-group ">
+                    <input type="checkbox " id="visited " value="Visited " name="visited " onclick="fun() ">
+                    <label for="visited ">Visited</label>
+                    <input type="checkbox " id="bucket " value="Bucket " name="bucket ">
+                    <label for="bucket ">Bucket List</label>
+                </div>
+                <div class="form-group " id="visitdate " style="display: none; ">
+                    <p>When did you travel here?</p>
+                    <input class="form-control inputstyle " type="date " name="date ">
+                </div>
+                <div class="form-group ">
+                    <button class="btn btn-lg btn-block btn-primary " onclick="myFunction() ">Add Place</button>
+                </div>
+                <strong><p style="color:red " id="err "></p></strong>
+            </form>
+
+        </div>
+
+
+    </div> -->
+
+    <script>
+        function fun() {
+            var checkbox = document.getElementById("visited");
+            var visitdate = document.getElementById("visitdate");
+            if (checkbox.checked == true) {
+                visitdate.style.display = "block";
+            } else {
+                visitdate.style.display = "none";
+            }
+        }
+
+        function myFunction() {
+            var i1 = document.getElementById("city");
+            var i2 = document.getElementById("photourl");
+            var i3 = document.getElementById("description");
+            var i4 = document.getElementById("visited");
+            var i5 = document.getElementById("bucket");
+            var i6 = document.getElementById("visitdate");
+            if ((!i1.checkValidity()) || (!i2.checkValidity()) || (!i3.checkValidity()) || ((!i4.checkValidity()) || (!i5.checkValidity()))) {
+
+                document.getElementById("err").innerHTML = "<p>All Fields are Required</p>";
+            }
+        }
+    </script>
+
+    <%- include("../partials/footer")%>

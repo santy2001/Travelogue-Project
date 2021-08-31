@@ -1,0 +1,40 @@
+<%-include("partials/header")%>
+    <!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-lg-4" style="background-color: white">
+            <img class="img-responsive" src="<%= place.image %>">
+            <!-- google -->
+        </div>
+        <div class="col-lg-8" style="background-color: #eeeeee">
+            <!-- <div class="container"> -->
+            <h4 style="margin-top:50px;">
+                <%=place.name%>
+
+            </h4>
+            <!-- </div> -->
+            <a href="/places/<%=place._id%>/edit" style="margin:10px 20px 0 700px;text-align: center; line-height: 7px;" class="btn btn-primary">EDIT PLACE</a>
+            <hr>
+            <p>
+                <%=place.description%>
+            </p>
+            <hr>
+            <p>
+                <%=place.date%>
+            </p>
+            <form method="POST" action="/places/<%=place._id%>?_method=DELETE">
+                <button class="btn btn-danger" style="text-align: center; line-height: 7px;">DELETE</button>
+            </form>
+
+        </div>
+
+
+
+
+        <a class="btn btn-primary" style="text-align: center; line-height: 7px;margin-left:1300px;" href="/places ">Back</a>
+    </div>
+    <!-- </div> -->
+
+
+
+
+    <%-include("partials/footer")%>

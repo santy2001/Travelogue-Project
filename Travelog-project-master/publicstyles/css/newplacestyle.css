@@ -1,0 +1,46 @@
+.addplacestyle {
+    color: #dbdcdf;
+    font-weight: 700;
+    font-size: 32px;
+    font-style: normal;
+}
+
+.inputstyle {
+    border: 1px solid #0E1331;
+}
+
+.inputstyle2 {
+    border: 1px solid gray;
+}
+
+.container1 {
+    background-color: #EEEEEE;
+}
+
+body {
+    margin: 0;
+}
+
+.container2 {
+    background-color: white;
+}
+
+.inputdefault {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.inputdefault2 {
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+.loginclass {
+    margin-top: 50px;
+    margin-left: 100px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.activeblock {
+    color: white;
+}

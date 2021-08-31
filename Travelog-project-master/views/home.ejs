@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/newplacestyle.css">
+
+<head>
+    <title>
+        Travelog Project
+    </title>
+
+    <body class="" style="background-color: #0E1331; margin: 60px;">
+
+
+        <div class="row" style=" margin: 0 300px">
+            <img src="https://personal-travelog.herokuapp.com/images/login-header.svg" width="720px">
+            <div class="container col-lg-6" style="background-color: white;">
+
+
+                <%-include ("login")%>
+
+                    <div class="vertical-line"></div>
+
+
+            </div>
+            </br>
+            </br>
+            <div class="container col-lg-6" style="background-color: white ">
+                <%-include ("register")%>
+            </div>
+        </div>
+
+
+    </body>
+
+</html>

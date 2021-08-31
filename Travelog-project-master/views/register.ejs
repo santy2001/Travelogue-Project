@@ -1,0 +1,50 @@
+</br>
+<div class="registerheadfont">
+    <p>If you don't already have an account register to create your account</p>
+</div>
+<form action="/register" method="post" onsubmit="return validateemail()">
+    <div class="form-group">
+        <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault2" id="name" type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+        <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault2" id="emailid" type="email" placeholder="Email Id" required>
+    </div>
+    <div class="form-group">
+        <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault2" id="phone" name="phone" placeholder="Phone No" type="tel" required>
+    </div>
+    <div class="form-group">
+        <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault2" id="user" type="text" name="username" placeholder="Username" required>
+    </div>
+    <div class="form-group">
+        <input style="height:40px;width:200px" class="form-control inputstyle2 inputdefault2" id="password" type="password" name="password" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+        <button style="height:50px;width:200px;text-align: center;" class="btn btn-lg btn-block btn-primary" id="signup" onclick="myFunction()">REGISTER</button>
+    </div>
+    <div class="form-group">
+        <strong><p style="color:red" id="err"></p></strong>
+    </div>
+</form>
+<script>
+    function myFunction() {
+        var i1 = document.getElementById("user");
+        var i2 = document.getElementById("password");
+        var i3 = document.getElementById("name");
+        var i4 = document.getElementById("emailid");
+        var i5 = document.getElementById("phone");
+
+        if ((!i1.checkValidity()) && (!i2.checkValidity()) && (!i3.checkValidity()) && (!i4.checkValidity()) && (!i5.checkValidity())) {
+            document.getElementById("err").innerHTML = "<p>All Fields are Required</p>";
+        }
+    }
+
+    function validateemail() {
+        var x = document.myform.email.value;
+        var atposition = x.indexOf("@");
+        var dotposition = x.lastIndexOf(".");
+        if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+            alert("Please enter a valid e-mail address \n atpostion:" + atposition + "\n dotposition:" + dotposition);
+            return false;
+        }
+    }
+</script>

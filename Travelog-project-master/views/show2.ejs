@@ -1,0 +1,35 @@
+<%-include("partials/header")%>
+    <!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-lg-4" style="background-color: white">
+            <!-- <div class="container" style="background-color:white;"> -->
+            <img class="img-responsive" src="<%= bucket.image %>">
+
+            <!-- google -->
+        </div>
+        <!-- <a href="/places/bucket/<%=bucket._id%>/edit2" class="btn btn-primary">EDIT PLACE</a> -->
+
+        <div class="col-lg-8" style="background-color: #eeeeee">
+            <!-- <img class="img-responsive" src="<%= bucket.image %>"> -->
+            <!-- <div class="caption"> -->
+            <!-- <hr> -->
+            <h4 style="margin-top:50px;">
+                <%=bucket.name%>
+            </h4>
+            <a href="/places/<%=bucket._id%>/edit" style="margin:10px 20px 0 700px;text-align: center; line-height: 7px;" class="btn btn-primary">EDIT PLACE</a>
+            <p>
+                <%=bucket.description%>
+            </p>
+            <hr>
+            <form method="POST" action="/places/bucket/<%=bucket._id%>?_method=DELETE">
+                <!-- <button>Delete</button> -->
+                <button class="btn btn-danger" style="text-align: center; line-height: 7px;">DELETE</button>
+            </form>
+        </div>
+        <a class="btn btn-primary" style="text-align: center; line-height: 7px;margin-left:1300px;" href="/places ">Back</a>
+    </div>
+
+
+
+
+    <%-include("partials/footer")%>

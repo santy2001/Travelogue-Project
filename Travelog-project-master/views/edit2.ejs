@@ -1,0 +1,69 @@
+<%- include("partials/header")%>
+    <div class="row" style="background-color: #EEEEEE;">
+        <div class="container col-lg-6">
+            <div style="width:100;">
+                <div class="column" style="width: 50px;">
+                    <a href="/places"><img src="https://personal-travelog.herokuapp.com/images/arrow.svg" width="20px" height="21px" style="margin-top: 4px;"></a>
+
+                </div>
+                <div class="column">
+                    <strong><h4>Edit Place Details</h4></strong>
+                </div>
+                <img src="https://personal-travelog.herokuapp.com/images/travel-illustration.svg" style="margin-top: -30%;" height="100%">
+
+            </div>
+        </div>
+        <div class="container col-lg-6">
+            <div style="margin:20px 90px 20px 90px;background-color: #ffffff; transform: scale(.9);" class=" ">
+                <form action="/places/bucket/<%=bucket._id%>?_method=PUT" method="POST" style="padding:50px" class="headings">
+
+                    <p class="addplaceheadfont">Add Details about the place where you have visited.</p>
+                    <div class="form-group">
+                        <p>City</p>
+                        <input id="city" class="form-control inputstyle" type="text" name="name" value="<%=bucket.name%>" required>
+                    </div>
+                    <div class="form-group">
+                        <p>Photo URL</p>
+                        <input id="photourl" class="form-control inputstyle" type="text" name="image" value="<%=bucket.image%>" required>
+                    </div>
+
+                    <div class="form-group">
+                        <p>Few words about this place</p>
+
+                        <textarea id="description" class="inputstyle" name="description" rows="5" cols="45"><%=bucket.description%></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="visited" value="Visited" name="visited" onclick="fun() ">
+                        <label for="visited">VISITED</label>
+                        <input type="checkbox" id="bucket" value="Bucket" name="bucket">
+                        <label for="bucket">BUCKET-LIST</label>
+                    </div>
+                    <div class="form-group">
+                        <a href="/places/bucket"><button class="btn btn-md  btn-block btn-primary">CANCEL</button></a>
+                        <button class="btn btn-md  btn-block btn-primary">UPDATE PLACE</button>
+                    </div>
+                    <strong><p style="color:red;font-family: 'IBM Plex Sans', sans-serif;" id="err"></p></strong>
+                    <br/>
+                    <br/>
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        function fun() {
+            var checkbox = document.getElementById("visited");
+            var visitdate = document.getElementById("visitdate");
+            if (checkbox.checked == true) {
+                visitdate.style.display = "block";
+            } else {
+                visitdate.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <%- include("partials/footer")%>

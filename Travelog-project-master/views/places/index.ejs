@@ -1,0 +1,95 @@
+<%- include("../partials/header")%>
+
+    <header class=" " style="background-color: #0E1331;">
+
+        <div class="row">
+            <div>
+                <img src="https://personal-travelog.herokuapp.com/images/home-illustration.svg" class="image-margin" />
+            </div>
+            <div class="col-lg-7">
+                <p class="mainpagepara1">Sometimes, what matters is to pack your bags and get on a car and travel NON-STOP.</p>
+                <p class="mainpagepara2">Explore! The World is Not Enough</p>
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- <div class="row text-center" style="display:flex; flex-wrap:wrap;"> -->
+
+    <!-- <ul class="nav nav-tabs"> -->
+    <!-- <nav class="nav nav-pills nav-fill"> -->
+    <nav class="nav nav-pills nav-fill" style="margin-top: 10px; background-color:#245A99; ">
+        <a class="nav-item nav-link" id="text1" onclick="changecolor1()" style="color:white" href="/places">MY VISITED PLACES</a>
+        <a class="nav-item nav-link" id="text2" onclick="changecolor2()" style="color: #55BD84;" href="/places/bucket">MY BUCKET LIST</a>
+
+    </nav>
+
+    <div class="row" style="margin: 10px 100px 0 100px;">
+        <div class="col col-lg-6 para">
+            <h4>My visited places</h4>
+        </div>
+        <div class="col col-lg-6">
+            <a class="btn btn-primary btn-large" href="/places/new" style="float:right; text-align: center; line-height: 7px;">Add Place</a>
+        </div>
+
+    </div>
+
+    <div class=row style="transform: scale(0.8);margin-top: -50px;">
+        <%if(places.length==0){%>
+            <h1 style="margin-top:300px;margin-left:550px;font-family: 'IBM Plex Sans', sans-serif;">NO PLACES FOUND</h1>
+            <%}else{%>
+                <%places.forEach(function(place){%>
+                    <div class="col-lg-3">
+                        <div class="container" style="background-color:white;">
+                            <a href="/places/<%=place._id%>"><img src="<%=place.image%>" style="width:305px;height:340px;margin-top:30px"class="center"></a>
+                            <div class="caption">
+                                <h4 class="cityname">
+                                    <br/>
+
+                                    <%=place.name%>
+
+                                </h4>
+                                <h4 class="visitdate">
+                                    <%=place.date%>
+                                        <br/>
+                                        <br/>
+                                </h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <%})%>
+                        <%}%>
+    </div>
+
+    </div>
+    <!-- </div> -->
+    <script>
+        function changecolor1() {
+            // var count = 1;
+            var property = document.getElementById("text1");
+            // if (count == 0) {
+            //     property.style.backgroundColor = "#FFFFFF"
+            //     // count = 1;
+            // } else {
+            property.style.color = "#55BD84";
+            // count = 0;
+            // }
+        }
+
+        function changecolor2() {
+            // var count = 1;
+            var property = document.getElementById("text");
+            // if (count == 0) {
+            //     property.style.backgroundColor = "#FFFFFF"
+            //     // count = 1;
+            // } else {
+            property.style.color = "#ffffff"
+                // count = 0;
+                // }
+        }
+    </script>
+
+    <%- include("../partials/footer")%>
