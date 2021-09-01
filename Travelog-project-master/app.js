@@ -16,7 +16,7 @@ app.use(expressFlash());
 app.use(flash());
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/publicstyles"));
-mongoose.connect('mongodb+srv://Nadhira:nadhi_134@cluster0-rvthp.mongodb.net/sample?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Santhosh:santy_134@cluster0-rvthp.mongodb.net/sample?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("express-session")({
